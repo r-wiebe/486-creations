@@ -308,6 +308,26 @@
     }
 
     .spec-label { color: var(--muted); min-width: 90px; }
+
+    .price-block {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
     .spec-value { color: var(--text); font-weight: 500; }
 
     /* ── WHY ── */
@@ -597,6 +617,10 @@
     <div class="product-content">
       <p class="section-label">The Product</p>
       <h2 class="product-title">Kids Table<br>&amp; Bench Set</h2>
+      <div class="price-block">
+        <span class="price">$800</span>
+        <span class="price-note">+ shipping</span>
+      </div>
       <p class="product-desc">
         Butcher block top, welded steel frame — no particleboard, no cheap hardware.
         It's the kind of table that survives art projects, snack time, and everything in between,
@@ -700,7 +724,7 @@
     function contact(who, via) {
       const n = atob(_c[who]);
       const url = via === 'wa'
-        ? 'https://wa.me/' + n + '?text=' + _m
+        ? 'whatsapp://send?phone=' + n + '&text=' + _m
         : 'sms:+' + n + '&body=' + _m;
       window.open(url, '_blank');
       closeModal();
