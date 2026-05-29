@@ -722,6 +722,102 @@
       .footnotes { padding: 2.5rem 1.25rem 1rem; }
     }
   </style>
+
+  <!-- Structured data for Google / AI search (invisible to visitors) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.486creations.com/#org",
+        "name": "486 Creations",
+        "url": "https://www.486creations.com/",
+        "logo": "https://www.486creations.com/og-image.jpg"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.486creations.com/#website",
+        "url": "https://www.486creations.com/",
+        "name": "486 Creations",
+        "publisher": { "@id": "https://www.486creations.com/#org" }
+      },
+      {
+        "@type": "Product",
+        "name": "Kids Table & Bench Set",
+        "image": [
+          "https://www.486creations.com/table-main.jpg",
+          "https://www.486creations.com/table-angle.jpg",
+          "https://www.486creations.com/table-playroom-wide.jpg"
+        ],
+        "description": "Kids table and bench set with a solid butcher block top and welded steel frame. No particleboard, no cheap hardware — built to outlast the kids who use it.",
+        "brand": { "@id": "https://www.486creations.com/#org" },
+        "material": ["Butcher block", "Welded steel"],
+        "weight": { "@type": "QuantitativeValue", "value": 90, "unitCode": "LBR" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.486creations.com/",
+          "priceCurrency": "USD",
+          "price": "849.99",
+          "availability": "https://schema.org/PreOrder",
+          "itemCondition": "https://schema.org/NewCondition",
+          "areaServed": "US",
+          "seller": { "@id": "https://www.486creations.com/#org" },
+          "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "US",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFeesEnumeration": "https://schema.org/ReturnShippingFees"
+          }
+        },
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "Table dimensions", "value": "22 in x 32 in top, 17 in tall" },
+          { "@type": "PropertyValue", "name": "Bench dimensions", "value": "9 in x 32 in each, 9.5 in tall" },
+          { "@type": "PropertyValue", "name": "Finish", "value": "Rubio Monocoat (food-safe hardwax oil)" },
+          { "@type": "PropertyValue", "name": "Set includes", "value": "Table plus 2 benches" },
+          { "@type": "PropertyValue", "name": "Warranty", "value": "1-year workmanship warranty" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is it safe for kids? What's the finish?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The butcher block top is finished with Rubio Monocoat, a tough, food-safe hardwax oil that high-end furniture makers use. It wipes clean easily and holds up to daily use, spills, and everything else kids bring to the table." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it arrive assembled?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It ships flat-packed to keep shipping costs down. Assembly is straightforward and only needs basic hand tools." }
+          },
+          {
+            "@type": "Question",
+            "name": "How big is it? Will it fit my kids?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The table is 22 by 32 inches and stands 17 inches tall; each bench is 9 by 32 inches and 9.5 inches tall." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the size or finish?",
+            "acceptedAnswer": { "@type": "Answer", "text": "For now it's one standard size and configuration, the set we've dialed in and build best. More options may come down the road." }
+          },
+          {
+            "@type": "Question",
+            "name": "What's your return and warranty policy?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every set is backed by a 1-year workmanship warranty. If it's not the right fit, we also offer a 30-day return policy (return shipping is on the buyer)." }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do you ship, and how much is shipping?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We ship within the continental US (lower 48 states). Final shipping depends on your location, and we include the cost in the quote we send after you reserve your spot." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
