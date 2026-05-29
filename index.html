@@ -15,8 +15,8 @@
   <meta property="og:title" content="486 Creations — Kids Butcher Block Table & Bench Set" />
   <meta property="og:description" content="Kids table and bench set with a butcher block top and welded steel frame. Built tough, looks great. Pre-orders open now." />
   <meta property="og:image" content="https://www.486creations.com/og-image.jpg" />
-  <meta property="og:image:width" content="750" />
-  <meta property="og:image:height" content="563" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="486 Creations — Kids Butcher Block Table & Bench Set" />
@@ -226,6 +226,30 @@
       display: block;
     }
 
+    .product-gallery { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .thumb-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.6rem;
+    }
+
+    .thumb {
+      padding: 0;
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 1 / 1;
+      background: var(--card);
+      transition: border-color 0.15s ease;
+    }
+
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .thumb:hover { border-color: var(--accent); }
+    .thumb.active { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+
     .placeholder-art {
       width: 100%;
       height: 100%;
@@ -401,6 +425,198 @@
     }
 
 
+    /* ── TRUST ROW ── */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      padding-top: 1.25rem;
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .trust-item svg { color: var(--accent); flex-shrink: 0; }
+
+    /* ── ABOUT ── */
+    .about {
+      padding: 5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-inner { max-width: 640px; margin: 0 auto; }
+
+    .about .section-label { display: block; margin-bottom: 0.75rem; }
+
+    .about-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .steps-inner { max-width: 900px; margin: 0 auto; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .step h3 { font-weight: 600; font-size: 0.95rem; }
+    .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 5rem 2rem;
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-inner { max-width: 720px; margin: 0 auto; }
+
+    .faq-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 0.03em;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.1rem 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after { content: '–'; }
+
+    .faq-item p {
+      padding: 0 0 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTNOTE REFS ── */
+    .fn-ref {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.7em;
+      vertical-align: super;
+    }
+
+    .avail-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: -0.5rem;
+    }
+
+    /* ── FOOTNOTES ── */
+    .footnotes {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem 1rem;
+    }
+
+    .footnotes-inner { max-width: 700px; margin: 0 auto; }
+
+    .footnotes-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      margin-top: 1.75rem;
+    }
+
+    .footnotes-title:first-child { margin-top: 0; }
+
+    .footnote {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .footnote sup { color: var(--accent); font-weight: 600; }
+
+    .footnote-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .footnote-list li {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .footnote-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -518,7 +734,12 @@
       }
 
       .why { padding: 4rem 1.25rem; }
-      .cta-section { padding: 5rem 1.25rem; }
+      .about { padding: 4rem 1.25rem; }
+      .steps { padding: 4rem 1.25rem; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .faq { padding: 4rem 1.25rem; }
+      .contact-section { padding: 5rem 1.25rem; }
+      .footnotes { padding: 2.5rem 1.25rem 1rem; }
     }
   </style>
 </head>
@@ -546,10 +767,19 @@
   <!-- PRODUCT -->
   <section class="product" id="product">
 
-    <!-- IMAGE — swap src="" with your real photo path when ready -->
-    <div class="product-image">
-      <img src="table.jpg" alt="Kids table and bench set — butcher block top with steel frame" />
-      <div class="product-badge">Pre-Orders Open</div>
+    <!-- IMAGE GALLERY -->
+    <div class="product-gallery">
+      <div class="product-image">
+        <img id="mainImage" src="table-main.jpg" alt="Kids table and bench set — butcher block top with welded steel frame" />
+        <div class="product-badge">Pre-Orders Open</div>
+      </div>
+      <div class="thumb-row">
+        <button type="button" class="thumb active" aria-label="Front view" onclick="swapImage(this,'table-main.jpg')"><img src="table-main.jpg" alt="" /></button>
+        <button type="button" class="thumb" aria-label="Angled view" onclick="swapImage(this,'table-angle.jpg')"><img src="table-angle.jpg" alt="" /></button>
+        <button type="button" class="thumb" aria-label="Top view" onclick="swapImage(this,'table-kitchen-light.jpg')"><img src="table-kitchen-light.jpg" alt="" /></button>
+        <button type="button" class="thumb" aria-label="In a playroom" onclick="swapImage(this,'table-playroom-wide.jpg')"><img src="table-playroom-wide.jpg" alt="" /></button>
+        <button type="button" class="thumb" aria-label="In use with books" onclick="swapImage(this,'table-playroom-books.jpg')"><img src="table-playroom-books.jpg" alt="" /></button>
+      </div>
     </div>
 
     <div class="product-content">
@@ -557,12 +787,14 @@
       <h2 class="product-title">Kids Table<br>&amp; Bench Set</h2>
       <div class="price-block">
         <span class="price">$849.99</span>
-        <span class="price-note">+ shipping</span>
+        <span class="price-note">+ shipping<sup class="fn-ref">*</sup></span>
       </div>
+      <p class="avail-note">Pre-orders open — we'll set a ship date once enough orders are in<sup class="fn-ref">**</sup></p>
       <p class="product-desc">
         Butcher block top, welded steel frame — no particleboard, no cheap hardware.
-        It's the kind of table that survives art projects, snack time, and everything in between,
-        and still looks great doing it.
+        Flat-pack tables wobble loose and end up at the curb. This one shrugs off art projects,
+        snack time, and everything kids throw at it — and still looks great years later.
+        Buy it once.
       </p>
       <div class="spec-list">
         <div class="spec-item">
@@ -578,6 +810,10 @@
           <span class="spec-value">Welded steel</span>
         </div>
         <div class="spec-item">
+          <span class="spec-label">Finish</span>
+          <span class="spec-value">Rubio Monocoat (food-safe)</span>
+        </div>
+        <div class="spec-item">
           <span class="spec-label">Set includes</span>
           <span class="spec-value">Table + 2 benches</span>
         </div>
@@ -585,6 +821,20 @@
           <span class="spec-label">Ship weight</span>
           <span class="spec-value">~90 lbs</span>
         </div>
+      </div>
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          1-year warranty
+        </span>
+        <span class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          30-day returns
+        </span>
+        <span class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Ships in the lower 48
+        </span>
       </div>
     </div>
 
@@ -613,17 +863,94 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <p class="section-label">Who We Are</p>
+      <h2 class="about-title">A Family Business</h2>
+      <p class="about-text">
+        We're a small family business, building something we can all work on together.
+        Our goal is simple: make furniture as solid and well-made as we'd put in our own
+        home — the kind you buy once.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps">
+    <div class="steps-inner">
+      <h2 class="why-title">How Pre-Orders Work</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Reserve your spot</h3>
+          <p>Send your info using the form below. No payment yet — you're just getting in line.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>We confirm the details</h3>
+          <p>We'll reach out within 2 business days to confirm your shipping details, send your quote and total, and keep you posted on the ship date as pre-orders fill up.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>We build &amp; ship</h3>
+          <p>Once you're set, we build your table and benches and ship them straight to your door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-inner">
+      <h2 class="faq-title">Questions?</h2>
+
+      <details class="faq-item">
+        <summary>Is it safe for kids? What's the finish?</summary>
+        <p>The butcher block top is finished with Rubio Monocoat — a tough, food-safe hardwax oil that high-end furniture makers use. It wipes clean easily and holds up to daily use, spills, and everything else kids bring to the table.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does it arrive assembled?</summary>
+        <p>It ships flat-packed to keep shipping costs down. Assembly is straightforward and only needs basic hand tools.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How big is it? Will it fit my kids?</summary>
+        <p>The table is 22" × 32" and stands 17" tall; each bench is 9" × 32" and 9.5" tall. We list the full dimensions in the product details above so you can check the fit for your space and your kids before you order.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I customize the size or finish?</summary>
+        <p>For now it's one standard size and configuration — it's the set we've dialed in and build best. More options may come down the road.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What's your return and warranty policy?</summary>
+        <p>Every set is backed by a 1-year workmanship warranty. If it's not the right fit, we also offer a 30-day return policy (return shipping is on the buyer).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where do you ship, and how much is shipping?</summary>
+        <p>We ship within the continental US (lower 48 states). Final shipping depends on your location, and we include the cost in the quote we send after you reserve your spot.</p>
+      </details>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
       <h2 class="cta-title">Interested?<br>Get in Line.</h2>
-      <p class="cta-sub">Pre-orders are open. Drop your info below and we'll reach out with payment details and confirm your build timeline directly.</p>
+      <p class="cta-sub">Pre-orders are open. Drop your info below and we'll send payment details and updates on your order.<sup class="fn-ref">***</sup></p>
       <form id="contactForm" class="contact-form" action="https://formspree.io/f/xdajbpdv" method="POST">
         <div class="form-field">
           <input type="text" name="name" placeholder="Your name" required />
         </div>
         <div class="form-field">
           <input type="email" name="email" placeholder="Your email" required />
+        </div>
+        <div class="form-field">
+          <input type="text" name="zip" placeholder="ZIP code (for a shipping estimate)" autocomplete="postal-code" inputmode="numeric" />
         </div>
         <div class="form-field">
           <textarea name="message" placeholder="Anything you'd like to add? (optional)" rows="3"></textarea>
@@ -635,6 +962,12 @@
   </section>
 
   <script>
+    function swapImage(el, src) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.thumb').forEach(function(t) { t.classList.remove('active'); });
+      el.classList.add('active');
+    }
+
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -663,6 +996,25 @@
       }
     });
   </script>
+
+  <!-- FOOTNOTES -->
+  <section class="footnotes">
+    <div class="footnotes-inner">
+      <h3 class="footnotes-title">Footnotes &amp; Details</h3>
+      <p class="footnote"><sup>*</sup> Shipping within the continental US (lower 48 states). Final cost depends on your location and is included when we send your quote.</p>
+      <p class="footnote"><sup>**</sup> We build in small batches. We'll set and confirm a ship date once enough orders are reserved to start a batch — so timing depends on how quickly pre-orders fill up.</p>
+      <p class="footnote"><sup>***</sup> We'll respond within 2 business days. Your ship date is confirmed once enough orders are in to begin your batch.</p>
+
+      <h3 class="footnotes-title">Important Information</h3>
+      <ul class="footnote-list">
+        <li>Standard configuration only — no customization available.</li>
+        <li>We build in batches — your ship date is set once enough orders come in.</li>
+        <li>Final shipping cost depends on your location and is shared with your quote.</li>
+        <li>Backed by a 1-year workmanship warranty.</li>
+        <li>30-day return policy — buyer covers return shipping.</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
