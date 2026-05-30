@@ -51,6 +51,17 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
     :root {
       --black: #FAF8F5;
       --dark: #F2EDE6;
@@ -660,6 +671,14 @@
     .form-field input:focus,
     .form-field textarea:focus { border-color: var(--accent); }
 
+    .form-note {
+      margin-top: 0.85rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+
     .form-submit {
       width: 100%;
       display: flex;
@@ -1032,19 +1051,20 @@
       <form id="contactForm" class="contact-form" action="https://formspree.io/f/xdajbpdv" method="POST">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
         <div class="form-field">
-          <input type="text" name="name" placeholder="Your name" required />
+          <input type="text" name="name" placeholder="Your name" aria-label="Your name" required />
         </div>
         <div class="form-field">
-          <input type="email" name="email" placeholder="Your email" required />
+          <input type="email" name="email" placeholder="Your email" aria-label="Your email" required />
         </div>
         <div class="form-field">
-          <input type="text" name="zip" placeholder="ZIP code (for a shipping estimate)" autocomplete="postal-code" inputmode="numeric" />
+          <input type="text" name="zip" placeholder="ZIP code (for a shipping estimate)" aria-label="ZIP code for a shipping estimate" autocomplete="postal-code" inputmode="numeric" />
         </div>
         <div class="form-field">
-          <textarea name="message" placeholder="Anything you'd like to add? (optional)" rows="3"></textarea>
+          <textarea name="message" placeholder="Anything you'd like to add? (optional)" aria-label="Anything you'd like to add (optional)" rows="3"></textarea>
         </div>
         <button type="submit" class="form-submit">Reserve My Spot</button>
         <p class="form-error" id="formError"></p>
+        <p class="form-note">We'll only use your details to contact you about your order — never shared, no spam.</p>
       </form>
     </div>
   </section>
