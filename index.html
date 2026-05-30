@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FAF8F5" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BT7GQT4Z5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4BT7GQT4Z5');
+  </script>
+
   <title>486 Creations — Kids Butcher Block Table & Bench Set</title>
   <meta name="description" content="Kids table and bench set with a solid butcher block top and welded steel frame. Built to outlast the kids who use it. Handmade to order — now taking orders." />
   <meta name="robots" content="index, follow" />
@@ -1091,6 +1101,7 @@
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+          if (window.gtag) { gtag('event', 'reserve_spot', { event_category: 'lead', event_label: 'Reserve My Spot' }); }
           form.innerHTML = '<p class="form-success">You\'re in line — we\'ll be in touch!</p>';
         } else {
           btn.textContent = 'Reserve My Spot';
