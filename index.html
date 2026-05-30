@@ -1080,11 +1080,50 @@
   </section>
 
   <script>
-    function swapImage(el, src) {
-      document.getElementById('mainImage').src = src;
-      document.querySelectorAll('.thumb').forEach(function(t) { t.classList.remove('active'); });
-      el.classList.add('active');
-    }
+    (function () {
+      var mainImage = document.getElementById('mainImage');
+      var thumbs = Array.prototype.slice.call(document.querySelectorAll('.thumb'));
+      var sources = thumbs.map(function (t) { return t.querySelector('img').getAttribute('src'); });
+      var current = 0;
+
+      function show(i) {
+        current = (i + sources.length) % sources.length;
+        mainImage.src = sources[current];
+        thumbs.forEach(function (t, idx) { t.classList.toggle('active', idx === current); });
+      }
+
+      // Thumbnail clicks (kept working via the existing inline onclick handlers)
+      window.swapImage = function (el, src) {
+        var idx = thumbs.indexOf(el);
+        if (idx === -1) idx = sources.indexOf(src);
+        show(idx === -1 ? 0 : idx);
+      };
+
+      // Swipe to navigate on touch devices
+      var area = document.querySelector('.product-image');
+      var startX = 0, startY = 0, tracking = false;
+      area.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        tracking = true;
+      }, { passive: true });
+      area.addEventListener('touchend', function (e) {
+        if (!tracking) return;
+        tracking = false;
+        var dx = e.changedTouches[0].clientX - startX;
+        var dy = e.changedTouches[0].clientY - startY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+          show(current + (dx < 0 ? 1 : -1));
+        }
+      }, { passive: true });
+
+      // Arrow-key navigation when the gallery has focus
+      area.setAttribute('tabindex', '0');
+      area.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { show(current - 1); }
+        else if (e.key === 'ArrowRight') { show(current + 1); }
+      });
+    })();
 
     const form = document.getElementById('contactForm');
     form.addEventListener('submit', async function(e) {
